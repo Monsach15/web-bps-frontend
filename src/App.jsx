@@ -21,7 +21,14 @@ export default function App() {
       <main className="p-4 sm:p-6 lg:p-8">
         <Routes>
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/home" element={<HomePage />} />
+          <Route
+            path="/home"
+            element={
+              <ProtectedRoute>
+                <HomePage />
+              </ProtectedRoute>
+            }
+          />
           <Route
             path="/publications"
             element={
