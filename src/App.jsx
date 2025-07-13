@@ -11,14 +11,17 @@ import EditPublicationPage from './components/EditPublicationPage';
 import LoginPage from './components/Login';
 import Footer from './components/Footer';
 import ProtectedRoute from "./components/ProtectedRoute";
+import GaleriPage from './components/GaleriPage';
+import HomePage from './components/HomePage';
 
 export default function App() {
   return (
-    <div className="bg-gray-100 min-h-screen font-sans">
+    <div className="bg-gradient-to-b from-sky-50 to-white min-h-screen font-sans">
       <Navbar />
       <main className="p-4 sm:p-6 lg:p-8">
         <Routes>
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/home" element={<HomePage />} />
           <Route
             path="/publications"
             element={
@@ -43,9 +46,9 @@ export default function App() {
               </ProtectedRoute>
             }
           />
-          
-          <Route path="/" element={<Navigate to="/publications" replace />} />
-          <Route path="*" element={<Navigate to="/publications" replace />} />
+          <Route path="/galeri" element={<GaleriPage />} />
+          <Route path="/" element={<Navigate to="/home" replace />} />
+          <Route path="*" element={<Navigate to="/home" replace />} />
         </Routes>
       </main>
       <Footer />

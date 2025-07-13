@@ -48,12 +48,6 @@ export default function AddPublicationPage() {
         } catch (err) {
             alert('Gagal menambah publikasi: ' + err.message);
         }
-
-        addPublication(newPublication);
-        navigate('/publications');
-        setTitle('');
-        setReleaseDate('');
-        setCoverFile(null);
     };
     return (
         <div className="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-lg">
