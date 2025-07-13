@@ -3,6 +3,8 @@ import apiClient from '../api/axios';
 export const authService = {
     async login(email, password) {
         try {
+            await apiClient.get('/sanctum/csrf-cookie');
+            
             const response = await apiClient.post('/login', { email, password });
             return response.data;
         } catch (error) {
