@@ -22,7 +22,7 @@ export default function LoginPage() {
     try {
       await loginAction(email, password);
       // Redirect ke publications setelah login berhasil
-      navigate('/publications');
+      navigate('/home');
     } catch (err) {
       console.error('Login failed:', err);
     }
