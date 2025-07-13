@@ -114,8 +114,18 @@ export default function EditPublicationPage() {
             <div className="mt-2">
               <span className="text-sm text-gray-600">Sampul saat ini:</span>
               <img
-                src={coverFile ? URL.createObjectURL(coverFile) : coverUrl}
+                src={coverUrl}
                 alt="Current Cover"
+                className="h-40 mt-1 rounded shadow-md"
+              />
+            </div>
+          )}
+          {coverFile && (
+            <div className="mt-2">
+              <span className="text-sm text-gray-600">Preview Sampul Baru:</span>
+              <img
+                src={URL.createObjectURL(coverFile)}
+                alt="Preview Cover"
                 className="h-40 mt-1 rounded shadow-md"
               />
             </div>

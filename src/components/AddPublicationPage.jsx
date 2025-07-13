@@ -100,6 +100,16 @@ export default function AddPublicationPage() {
                         onChange={e => setCoverFile(e.target.files[0])}
                         className="w-full border border-gray-300 rounded-md shadow-sm file:mr-4 file:py-2 file:px-4 file:rounded-l-md file:border-0 file:bg-gray-300 file:text-gray-700 file:font-semibold hover:file:bg-gray-400"
                     />
+                    {coverFile && (
+                        <div className="mt-2">
+                            <span className="text-sm text-gray-600">Preview Sampul:</span>
+                            <img
+                                src={URL.createObjectURL(coverFile)}
+                                alt="Preview Cover"
+                                className="h-40 mt-1 rounded shadow-md"
+                            />
+                        </div>
+                    )}
                 </div>
 
                 <div className="flex justify-end">
